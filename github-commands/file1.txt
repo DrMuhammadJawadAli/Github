@@ -1,0 +1,82 @@
+#Listing all Git commands would be overwhelming, as there are hundreds (many are low-level "plumbing" commands).
+
+Instead, here is a categorized list of the most common and essential commands you'll use every day.
+
+1. Setup & Getting Started
+git config: Sets configuration options (like your name and email).
+
+git config --global user.name "Your Name"
+
+git init: Initializes a new Git repository in the current folder.
+
+git clone [url]: Creates a local copy of a remote repository.
+
+2. The Basic Workflow (Making Changes)
+git status: Shows the state of your working directory and staged files.
+
+git add [file]: Adds a file to the "staging area" to be included in the next commit.
+
+git add . (stages all changes in the current directory)
+
+git commit -m "Message": Saves a snapshot of your staged changes to the project history.
+
+git diff: Shows the changes between your working directory and the staging area.
+
+git diff --staged (shows changes between the staging area and your last commit)
+
+3. Branching & Merging
+git branch: Lists all branches in your repository.
+
+git branch [branch-name] (creates a new branch)
+
+git branch -d [branch-name] (deletes a branch)
+
+git checkout [branch-name]: Switches to a different branch.
+
+git checkout -b [branch-name] (creates a new branch and switches to it)
+
+git switch [branch-name]: The modern command for switching branches.
+
+git merge [branch-name]: Combines the history of another branch into your current branch.
+
+git rebase [branch-name]: Re-applies your commits on top of another branch, creating a cleaner, linear history.
+
+4. Working with Remotes (Collaboration)
+git remote -v: Lists all configured remote repositories.
+
+git fetch: Downloads all branches and commits from a remote repository but doesn't merge them.
+
+git pull: Fetches changes from a remote and automatically merges them into your current branch (it's git fetch + git merge).
+
+git push: Uploads your local commits to a remote repository.
+
+git push -u origin [branch-name] (pushes a new branch and sets it to track the remote branch)
+
+5. Inspecting History
+git log: Shows the commit history.
+
+git log --oneline --graph (a very useful, condensed view)
+
+git show [commit-hash]: Shows the details and changes of a specific commit.
+
+git blame [file]: Shows who last modified each line of a file.
+
+6. Undoing Changes
+git restore [file]: Discards changes in your working directory (use with caution).
+
+git restore --staged [file] (un-stages a file, moving it from staging back to the working directory)
+
+git reset [commit-hash]: Resets your branch HEAD to a specific commit. Can be used to undo commits (use with extreme caution, especially --hard).
+
+git revert [commit-hash]: Creates a new commit that undoes the changes from a previous commit. This is the safe way to undo a public commit.
+
+git stash: Temporarily saves your uncommitted changes so you can switch branches.
+
+git stash pop (re-applies the last stashed changes)
+
+Pro-Tip: For help on any command, just type: git help [command-name] (e.g., git help commit)
+
+
+#git remote -v is a command that lists all your configured remote repositories (like origin) and shows you the URLs they point to.
+
+The -v stands for "verbose," and it's what adds the URLs to the output. You'll usually see separate URLs for (fetch) (pulling code) and (push) (sending code).
