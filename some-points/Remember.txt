@@ -1,3 +1,4 @@
+
 " git init " // to insillized the repositories.
 " git add ." // to staging.
 "git commit -m " // to commit it like save it and (m is for message).
@@ -25,4 +26,5 @@ the other one you can see more on internet like docs or ai tools.
 and you can see the other one on docs chai and code docs and for more deep go on git or github docs.
 //git is a softwear
 //github is a online service for using git and holding code in clude.
+
 
