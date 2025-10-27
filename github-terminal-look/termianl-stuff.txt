@@ -1,0 +1,62 @@
+#PS D:\coding\Github> echo "# Github " 
+# Github 
+PS D:\coding\Github> echo "#Github " >> README.md
+Initialized empty Git repository in D:/coding/Github/.d"
+ create mode 100644 README.md
+PS D:\coding\Github> git branch        
+PS D:\coding\Github> git branch -m master 
+PS D:\coding\Github> git branch
+* master
+PS D:\coding\Github> git branch -M main
+PS D:\coding\Github> git branch 
+* main
+PS D:\coding\Github> git remote add origin https://github.com/DrMuhammadJawadAli/Github.git
+PS D:\coding\Github> git remote -v 
+* main
+PS D:\coding\Github> git remote add origin https://github.com/DrMuhammadJawadAli/Github.git
+PS D:\coding\Github> git remote -v
+PS D:\coding\Github> git remote add origin https://github.com/DrMuhammadJawadAli/Github.git
+PS D:\coding\Github> git remote -v
+hub.com/DrMuhammadJawadAli/Github.git
+PS D:\coding\Github> git remote -v
+origin  https://github.com/DrMuhammadJawadAli/Github.git (fetch)
+PS D:\coding\Github> git remote -v
+origin  https://github.com/DrMuhammadJawadAli/Github.git (fetch)
+origin  https://github.com/DrMuhammadJawadAli/Github.git (fetch)
+origin  https://github.com/DrMuhammadJawadAli/Github.git (push)
+it (fetch)
+origin  https://github.com/DrMuhammadJawadAli/Github.git (push)
+origin  https://github.com/DrMuhammadJawadAli/Github.git (push)
+
+
+
+
+
+
+
+
+  (use "git add <file>..." to include in what will be 
+committed)
+        github-commands/
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\coding\Github> git commit -m "github commands added "
+[main 9441bf6] github commands added
+ 1 file changed, 82 insertions(+)
+PS D:\coding\Github> git status 
+On branch main
+nothing to commit, working tree clean
+PS D:\coding\Github> git remote -v 
+origin  https://github.com/DrMuhammadJawadAli/Github.git (fetch)
+origin  https://github.com/DrMuhammadJawadAli/Github.git (push)
+PS D:\coding\Github> git push -u origin main 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (7/7), 1.89 KiB | 322.00 KiB/s, 
+done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/DrMuhammadJawadAli/Github.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+PS D:\coding\Github> 
