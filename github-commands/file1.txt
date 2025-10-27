@@ -1,82 +1,569 @@
-#Listing all Git commands would be overwhelming, as there are hundreds (many are low-level "plumbing" commands).
-
-Instead, here is a categorized list of the most common and essential commands you'll use every day.
-
-1. Setup & Getting Started
-git config: Sets configuration options (like your name and email).
-
-git config --global user.name "Your Name"
-
-git init: Initializes a new Git repository in the current folder.
-
-git clone [url]: Creates a local copy of a remote repository.
-
-2. The Basic Workflow (Making Changes)
-git status: Shows the state of your working directory and staged files.
-
-git add [file]: Adds a file to the "staging area" to be included in the next commit.
-
-git add . (stages all changes in the current directory)
-
-git commit -m "Message": Saves a snapshot of your staged changes to the project history.
-
-git diff: Shows the changes between your working directory and the staging area.
-
-git diff --staged (shows changes between the staging area and your last commit)
-
-3. Branching & Merging
-git branch: Lists all branches in your repository.
-
-git branch [branch-name] (creates a new branch)
-
-git branch -d [branch-name] (deletes a branch)
-
-git checkout [branch-name]: Switches to a different branch.
-
-git checkout -b [branch-name] (creates a new branch and switches to it)
-
-git switch [branch-name]: The modern command for switching branches.
-
-git merge [branch-name]: Combines the history of another branch into your current branch.
-
-git rebase [branch-name]: Re-applies your commits on top of another branch, creating a cleaner, linear history.
-
-4. Working with Remotes (Collaboration)
-git remote -v: Lists all configured remote repositories.
-
-git fetch: Downloads all branches and commits from a remote repository but doesn't merge them.
-
-git pull: Fetches changes from a remote and automatically merges them into your current branch (it's git fetch + git merge).
-
-git push: Uploads your local commits to a remote repository.
-
-git push -u origin [branch-name] (pushes a new branch and sets it to track the remote branch)
-
-5. Inspecting History
-git log: Shows the commit history.
-
-git log --oneline --graph (a very useful, condensed view)
-
-git show [commit-hash]: Shows the details and changes of a specific commit.
-
-git blame [file]: Shows who last modified each line of a file.
-
-6. Undoing Changes
-git restore [file]: Discards changes in your working directory (use with caution).
-
-git restore --staged [file] (un-stages a file, moving it from staging back to the working directory)
-
-git reset [commit-hash]: Resets your branch HEAD to a specific commit. Can be used to undo commits (use with extreme caution, especially --hard).
-
-git revert [commit-hash]: Creates a new commit that undoes the changes from a previous commit. This is the safe way to undo a public commit.
-
-git stash: Temporarily saves your uncommitted changes so you can switch branches.
-
-git stash pop (re-applies the last stashed changes)
-
-Pro-Tip: For help on any command, just type: git help [command-name] (e.g., git help commit)
+PS D:\coding\Github> echo "# Github " 
+# Github 
+PS D:\coding\Github> echo "#Github " >> README.md
+Initialized empty Git repository in D:/coding/Github/.d"
+ create mode 100644 README.md
+PS D:\coding\Github> git branch        
+PS D:\coding\Github> git branch -m master 
+PS D:\coding\Github> git branch
+* master
+PS D:\coding\Github> git branch -M main
+PS D:\coding\Github> git branch 
+* main
+PS D:\coding\Github> git remote add origin https://github.com/DrMuhammadJawadAli/Github.git
+PS D:\coding\Github> git remote -v 
+* main
+PS D:\coding\Github> git remote add origin https://github.com/DrMuhammadJawadAli/Github.git
+PS D:\coding\Github> git remote -v
+PS D:\coding\Github> git remote add origin https://github.com/DrMuhammadJawadAli/Github.git
+PS D:\coding\Github> git remote -v
+hub.com/DrMuhammadJawadAli/Github.git
+PS D:\coding\Github> git remote -v
+origin  https://github.com/DrMuhammadJawadAli/Github.git (fetch)
+PS D:\coding\Github> git remote -v
+origin  https://github.com/DrMuhammadJawadAli/Github.git (fetch)
+origin  https://github.com/DrMuhammadJawadAli/Github.git (fetch)
+origin  https://github.com/DrMuhammadJawadAli/Github.git (push)
+it (fetch)
+origin  https://github.com/DrMuhammadJawadAli/Github.git (push)
+origin  https://github.com/DrMuhammadJawadAli/Github.git (push)
 
 
-#git remote -v is a command that lists all your configured remote repositories (like origin) and shows you the URLs they point to.
 
-The -v stands for "verbose," and it's what adds the URLs to the output. You'll usually see separate URLs for (fetch) (pulling code) and (push) (sending code).
+
+
+
+
+
+  (use "git add <file>..." to include in what will be 
+committed)
+        github-commands/
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\coding\Github> git commit -m "github commands added "
+[main 9441bf6] github commands added
+ 1 file changed, 82 insertions(+)
+PS D:\coding\Github> git status 
+On branch main
+nothing to commit, working tree clean
+PS D:\coding\Github> git remote -v 
+origin  https://github.com/DrMuhammadJawadAli/Github.git (fetch)
+origin  https://github.com/DrMuhammadJawadAli/Github.git (push)
+PS D:\coding\Github> git push -u origin main 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (7/7), 1.89 KiB | 322.00 KiB/s, 
+done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (7/7), 1.89 KiB | 322.00 KiB/s, 
+done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Writing objects: 100% (7/7), 1.89 KiB | 322.00 KiB/s, 
+done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+from 0)
+To https://github.com/DrMuhammadJawadAli/Github.git   
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+PS D:\coding\Github> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+  (use "git add <file>..." to include in what will be 
+committed)
+        github-terminal-look/
+
+se "git add" to track)
+PS D:\coding\Github> git add .
+PS D:\coding\Github> git commit -m "git tutorial"     
+[main c4f2973] git tutorial
+ 1 file changed, 62 insertions(+)
+ create mode 100644 github-terminal-look/termianl-stuff.txt
+PS D:\coding\Github> git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 1001 bytes | 200.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/DrMuhammadJawadAli/Github.git   
+   9441bf6..c4f2973  main -> main
+PS D:\coding\Github> git status 
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+orking directory)
+        modified:   README.md
+no changes added to commit (use "git add" and/or "git 
+PS D:\coding\Github> git add . 
+PS D:\coding\Github> git commit -m " GIT AND GITHUB STUFF "
+[main f68fc5e]  GIT AND GITHUB STUFF
+ 1 file changed, 0 insertions(+), 0 deletions(-)      
+PS D:\coding\Github> GIT PUSH ORIGIN MAIN 
+git: 'PUSH' is not a git command. See 'git --help'.   
+PS D:\coding\Github> git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Compressing objects: 100% (3/3), done.
+ done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (To https://github.com/DrMuhammadJawadAli/Github.git   
+   c4f2973..f68fc5e  main -> main
+PS D:\coding\Github> git switch -c bug
+Switched to a new branch 'bug'
+PS D:\coding\Github> git branch
+* bug
+  main
+PS D:\coding\Github> git status
+Untracked files:
+  (use "git add <file>..." to include in what will be 
+committed)
+        bug-fles/
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\coding\Github> git status
+Untracked files:
+  (use "git add <file>..." to include in what will be 
+
+nothing added to commit but untracked files present (use "git add" to track)
+* bug
+  main
+PS D:\coding\Github> git add .
+PS D:\coding\Github> git commit -m " add bug file "   
+[bug 94acc13]  add bug file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 bug-fles/bug.txt
+PS D:\coding\Github> git push origin bug
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 483 bytes | 120.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Create a pull request for 'bug' on GitHub by visiting:
+remote:      https://github.com/DrMuhammadJawadAli/Github/pull/new/bug
+remote:
+To https://github.com/DrMuhammadJawadAli/Github.git   
+ * [new branch]      bug -> bug
+PS D:\coding\Github> git diff main
+new file mode 100644
+index 0000000..01227c5
++++ b/bug-fles/bug.txt
+@@ -0,0 +1 @@
+" bug " branch then later on we will merge it with maiPS D:\coding\Github> git status    
+nothing to commit, working tree clean
+PS D:\coding\Github> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS D:\coding\Github> git branch
+  bug
+* main
+PS D:\coding\Github> git pull origin main
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 905 bytes | 301.00 KiB/s, done.
+From https://github.com/DrMuhammadJawadAli/Github
+ * branch            main       -> FETCH_HEAD
+   f68fc5e..544b902  main       -> origin/main
+Updating f68fc5e..544b902
+Fast-forward
+ bug-fles/bug.txt | 1 +
+ * branch            main       -> FETCH_HEAD
+   f68fc5e..544b902  main       -> origin/main        
+Updating f68fc5e..544b902
+Fast-forward
+ bug-fles/bug.txt | 1 +
+   f68fc5e..544b902  main       -> origin/main        
+Updating f68fc5e..544b902
+Fast-forward
+ bug-fles/bug.txt | 1 +
+Updating f68fc5e..544b902
+Fast-forward
+ bug-fles/bug.txt | 1 +
+Fast-forward
+ bug-fles/bug.txt | 1 +
+ bug-fles/bug.txt | 1 +
+ create mode 100644 bug-fles/bug.txt
+PS D:\coding\Github> git branch
+  bug
+* main
+PS D:\coding\Github> git add .
+PS D:\coding\Github> git add .
+PS D:\coding\Github> git commit -m "Added new feature"
+PS D:\coding\Github> git commit -m "Added new feature"
+
+[main 94e5c91] Added new feature
+PS D:\coding\Github> git branch
+* main
+PS D:\coding\Github> git checkout bug
+PS D:\coding\Github> git add .
+PS D:\coding\Github> git commit -m "Added the final fe[bug 83cca65] Added the final feature
+ 1 file changed, 1 insertion(+)
+PS D:\coding\Github> git branch
+  main
+PS D:\coding\Github> git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.    
+  (use "git push" to publish your local commits)      
+PS D:\coding\Github> git diff bug  
+index a8c35e9..88de44a 100644
+--- a/bug-fles/bug.txt
+@@ -1,2 +1,3 @@
+ this file is a bug files actually this one is in the 
+PS D:\coding\Github> git branch
+  bug
+* main
+PS D:\coding\Github> git merge bug
+Auto-merging bug-fles/bug.txt
+CONFLICT (content): Merge conflict in bug-fles/bug.txtAutomatic merge failed; fix conflicts and then commit 
+the result.
+PS D:\coding\Github> git merge bug
+Auto-merging bug-fles/bug.txt
+CONFLICT (content): Merge conflict in bug-fles/bug.txtAutomatic merge failed; fix conflicts and then commit 
+the result.
+Auto-merging bug-fles/bug.txt
+CONFLICT (content): Merge conflict in bug-fles/bug.txtAutomatic merge failed; fix conflicts and then commit 
+the result.
+CONFLICT (content): Merge conflict in bug-fles/bug.txtAutomatic merge failed; fix conflicts and then commit 
+the result.
+
+
+                     git add .
+PS D:\coding\Github> git commit -m " Added both features in code "
+[main 23772fa]  Added both features in code
+Your branch is ahead of 'origin/main' by 3 commits.   
+  (use "git push" to publish your local commits)      
+
+nothing to commit, working tree clean
+PS D:\coding\Github> git diff main
+PS D:\coding\Github> git diff bug
+index a8c35e9..5f97d0a 100644
++++ b/bug-fles/bug.txt
+@@ -1,2 +1,7 @@
+ this file is a bug files actually this one is in the 
+PS D:\coding\Github> git checkout bug
+Updating 83cca65..23772fa
+Fast-forward
+ 1 file changed, 6 insertions(+), 1 deletion(-)       
+PS D:\coding\Github> git add .
+On branch bug
+nothing to commit, working tree clean
+PS D:\coding\Github> git branch 
+* bug
+PS D:\coding\Github> git main
+git: 'main' is not a git command. See 'git --help'.   
+
+The most similar command is
+PS D:\coding\Github> git main
+git: 'main' is not a git command. See 'git --help'.   
+
+        mailinfo
+PS D:\coding\Github> git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 3 commits.   
+  (use "git push" to publish your local commits)      
+PS D:\coding\Github> git push
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (12/12), 1.08 KiB | 100.00 KiB/s, done.
+(from 0)
+remote: Resolving deltas: 100% (5/5), completed with 1 local object.
+To https://github.com/DrMuhammadJawadAli/Github.git   
+   544b902..23772fa  main -> main
+PS D:\coding\Github> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+        modified:   README.md
+
+commit -a")
+PS D:\coding\Github> git add .
+PS D:\coding\Github> git reset README.md
+Unstaged changes after reset:
+M       README.md
+PS D:\coding\Github> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+        modified:   README.md
+
+commit -a")
+PS D:\coding\Github> git add .
+PS D:\coding\Github> git commit -m "reset the files " 
+[main ca22214] reset the files
+ 1 file changed, 0 insertions(+), 0 deletions(-)      
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.    
+  (use "git push" to publish your local commits)      
+
+nothing to commit, working tree clean
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.    
+  (use "git push" to publish your local commits)      
+
+nothing to commit, working tree clean
+PS D:\coding\Github> git log
+-> main)
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+Date:   Mon Oct 27 23:43:33 2025 +0500
+
+    reset the files
+PS D:\coding\Github> git log --oneline
+23772fa (origin/main, bug)  Added both features in code
+94e5c91 Added new feature
+544b902 Merge pull request #1 from DrMuhammadJawadAli/git: 'configlog' is not a git command. See 'git --helpPS D:\coding\Github> git config-log
+git: 'config-log' is not a git command. See 'git --help'.
+PS D:\coding\Github> git config
+error: no action specified
+PS D:\coding\Github> git log 
+-> main)
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+Date:   Mon Oct 27 23:43:33 2025 +0500
+
+    reset the files
+PS D:\coding\Github> git reflog
+es
+23772fa (origin/main, bug) HEAD@{1}: checkout: moving 
+from bug to main
+23772fa (origin/main, bug) HEAD@{2}: merge main: Fast-forward
+PS D:\coding\Github> git reflog --oneline 
+ca22214 (HEAD -> main) HEAD@{0}: commit: reset the files
+83cca65 HEAD@{3}: checkout: moving from main to bug   
+:...skipping...
+ca22214 (HEAD -> main) HEAD@{0}: commit: reset the files
+23772fa (origin/main, bug) HEAD@{1}: checkout: moving 
+from bug to main
+23772fa (origin/main, bug) HEAD@{2}: merge main: Fast-forward
+83cca65 HEAD@{3}: checkout: moving from main to bug   
+23772fa (origin/main, bug) HEAD@{4}: commit (merge): Added both features in code
+:...skipping...  
+es
+23772fa (origin/main, bug) HEAD@{1}: checkout: moving 
+from bug to main
+23772fa (origin/main, bug) HEAD@{2}: merge main: Fast-forward
+83cca65 HEAD@{3}: checkout: moving from main to bug   
+23772fa (origin/main, bug) HEAD@{4}: commit (merge): Added both features in code
+94e5c91 HEAD@{5}: checkout: moving from bug to main   
+83cca65 HEAD@{6}: commit: Added the final feature     
+forward
+83cca65 HEAD@{3}: checkout: moving from main to bug   
+23772fa (origin/main, bug) HEAD@{4}: commit (merge): Added both features in code
+94e5c91 HEAD@{5}: checkout: moving from bug to main   
+83cca65 HEAD@{6}: commit: Added the final feature     
+83cca65 HEAD@{3}: checkout: moving from main to bug   
+23772fa (origin/main, bug) HEAD@{4}: commit (merge): Added both features in code
+94e5c91 HEAD@{5}: checkout: moving from bug to main   
+83cca65 HEAD@{6}: commit: Added the final feature     
+23772fa (origin/main, bug) HEAD@{4}: commit (merge): Added both features in code
+94e5c91 HEAD@{5}: checkout: moving from bug to main   
+83cca65 HEAD@{6}: commit: Added the final feature     
+dded both features in code
+94e5c91 HEAD@{5}: checkout: moving from bug to main   
+83cca65 HEAD@{6}: commit: Added the final feature     
+94e5c91 HEAD@{5}: checkout: moving from bug to main   
+83cca65 HEAD@{6}: commit: Added the final feature     
+83cca65 HEAD@{6}: commit: Added the final feature     
+94acc13 (origin/bug) HEAD@{7}: checkout: moving from mM       README.md
+M       bug-fles/bug.txt
+PS D:\coding\Github> git reset 83cca65
+M       bug-fles/bug.txt
+PS D:\coding\Github> git add .
+PS D:\coding\Github> git reset 83cca65
+Unstaged changes after reset:
+M       README.md
+M       bug-fles/bug.txt
+PS D:\coding\Github> git add .
+PS D:\coding\Github> git status
+On branch main
+Your branch is behind 'origin/main' by 3 commits, and 
+  (use "git pull" to update your local branch)        
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)   
+        modified:   README.md
+        modified:   bug-fles/bug.txt
+
+PS D:\coding\Github> git status
+On branch main
+Your branch is behind 'origin/main' by 3 commits, and 
+  (use "git pull" to update your local branch)        
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)   
+        modified:   README.md
+        modified:   bug-fles/bug.txt
+
+PS D:\coding\Github> git reflog --oneline 
+a65
+83cca65 (HEAD -> main) HEAD@{1}: reset: moving to 83cca65
+a65
+ca22214 HEAD@{3}: commit: reset the files
+23772fa (origin/main, bug) HEAD@{4}: checkout: moving 
+PS D:\coding\Github> git reset 94e5c91
+Unstaged changes after reset:
+M       README.md
+M       bug-fles/bug.txt
+PS D:\coding\Github> git log
+commit 94e5c91e34a9326417a7ac041ff6d543e460590c (HEAD 
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+Date:   Mon Oct 27 23:28:53 2025 +0500
+
+    Added new feature
+
+commit 544b9022fb11f8debe5190b00862d09a310cea42       
+PS D:\coding\Github> git reset 94e5c91e34a9326417a7ac0
+
+commit 544b9022fb11f8debe5190b00862d09a310cea42       
+PS D:\coding\Github> git reset 94e5c91e34a9326417a7ac0commit 544b9022fb11f8debe5190b00862d09a310cea42       
+PS D:\coding\Github> git reset 94e5c91e34a9326417a7ac0PS D:\coding\Github> git reset 94e5c91e34a9326417a7ac0Unstaged changes after reset:
+M       README.md
+M       bug-fles/bug.txt
+PS D:\coding\Github> git status
+On branch main
+Your branch is behind 'origin/main' by 2 commits, and 
+can be fast-forwarded.
+  (use "git pull" to update your local branch)        
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git 
+commit -a")
+PS D:\coding\Github> git log
+commit 94e5c91e34a9326417a7ac041ff6d543e460590c (HEAD 
+commit 94e5c91e34a9326417a7ac041ff6d543e460590c (HEAD 
+-> main)
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+commit 94e5c91e34a9326417a7ac041ff6d543e460590c (HEAD 
+-> main)
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+Date:   Mon Oct 27 23:28:53 2025 +0500
+
+commit 94e5c91e34a9326417a7ac041ff6d543e460590c (HEAD 
+-> main)
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+Date:   Mon Oct 27 23:28:53 2025 +0500
+
+    Added new feature
+commit 94e5c91e34a9326417a7ac041ff6d543e460590c (HEAD 
+-> main)
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+Date:   Mon Oct 27 23:28:53 2025 +0500
+
+    Added new feature
+
+commit 94e5c91e34a9326417a7ac041ff6d543e460590c (HEAD 
+-> main)
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+Date:   Mon Oct 27 23:28:53 2025 +0500
+
+    Added new feature
+
+commit 544b9022fb11f8debe5190b00862d09a310cea42       
+Merge: f68fc5e 94acc13
+:...skipping...
+commit 94e5c91e34a9326417a7ac041ff6d543e460590c (HEAD 
+-> main)
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+:...skipping...
+commit 94e5c91e34a9326417a7ac041ff6d543e460590c (HEAD 
+-> main)
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+Date:   Mon Oct 27 23:28:53 2025 +0500
+
+    Added new feature
+
+commit 544b9022fb11f8debe5190b00862d09a310cea42       
+Merge: f68fc5e 94acc13
+Author: Dr. Muhammad jawad <166320543+DrMuhammadJawadAli@users.noreply.github.com>
+:...skipping...
+commit 94e5c91e34a9326417a7ac041ff6d543e460590c (HEAD 
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+Date:   Mon Oct 27 23:28:53 2025 +0500
+
+    Added new feature
+
+commit 544b9022fb11f8debe5190b00862d09a310cea42       
+Merge: f68fc5e 94acc13
+Author: Dr. Muhammad jawad <166320543+DrMuhammadJawadAli@users.noreply.github.com>
+Date:   Mon Oct 27 23:23:20 2025 +0500
+
+    Merge pull request #1 from DrMuhammadJawadAli/bug 
+
+PS D:\coding\Github> git reset 94e5c91e34a9326417a7ac041ff6d543e460590c
+Unstaged changes after reset:
+M       README.md
+M       bug-fles/bug.txt
+41ff6d543e460590c
+Unstaged changes after reset:
+M       README.md
+M       bug-fles/bug.txt
+PS D:\coding\Github> git status
+On branch main
+Your branch is behind 'origin/main' by 2 commits, and 
+can be fast-forwarded.
+  (use "git pull" to update your local branch)        
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+
+no changes added to commit (use "git add" and/or "git 
+PS D:\coding\Github> git add .
+PS D:\coding\Github> git commit -m "got it" 
+[main 5a1eb2a] got it
+ 2 files changed, 5 insertions(+), 1 deletion(-)      
+PS D:\coding\Github> git status
+On branch main
+Your branch and 'origin/main' have diverged,
+  (use "git pull" if you want to integrate the remote 
+branch with yours)
+nothing to commit, working tree clean
+PS D:\coding\Github> git branch
+  bug
+* main
+PS D:\coding\Github> git log
+commit 5a1eb2abc78fa2d3b48a8d5523b5e060301c9164 (HEAD 
+-> main)
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+Date:   Mon Oct 27 23:56:02 2025 +0500
+commit 5a1eb2abc78fa2d3b48a8d5523b5e060301c9164 (HEAD 
+-> main)
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+Date:   Mon Oct 27 23:56:02 2025 +0500
+
+    got it
+commit 5a1eb2abc78fa2d3b48a8d5523b5e060301c9164 (HEAD 
+-> main)
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+Date:   Mon Oct 27 23:56:02 2025 +0500
+
+    got it
+
+:...skipping...
+-> main)
+Author: Muhammad jawad <jawadfsd50@gmail.com>
+Date:   Mon Oct 27 23:56:02 2025 +0500
+
+    got it
+
+commit 94e5c91e34a9326417a7ac041ff6d543e460590c       
+PS D:\coding\Github> git reflog --oneline
+5a1eb2a (HEAD -> main) HEAD@{0}: commit: got it
+94e5c91 HEAD@{1}: reset: moving to 94e5c91e34a9326417a7ac041ff6d543e460590c
+94e5c91 HEAD@{2}: reset: moving to 94e5c91e34a9326417a7ac041ff6d543e460590c
+94e5c91 HEAD@{3}: reset: moving to 94e5c91
+83cca65 HEAD@{4}: reset: moving to 83cca65
+83cca65 HEAD@{5}: reset: moving to 83cca65
+PS D:\coding\Github>  

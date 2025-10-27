@@ -1,0 +1,28 @@
+" git init " // to insillized the repositories.
+" git add ." // to staging.
+"git commit -m " // to commit it like save it and (m is for message).
+"git remote add origin(folder online) link(your repo means folder link)" 
+"git push -u (upstream ) origin main" // push code -u = usptream 'so we can add the next time in easy way'.
+"git clone repo link " // to get the code from al ready repo.
+"git remote -v (verbose) " // to see the where you fectch and push.
+" git pull origin main " // get the data and attach with your branch.
+"git fetch link" // to download the copy of the data.
+"git branch" //see bracnh
+"git status" // see status
+"git config" // set config 
+"git checkout -b branchname" /create new branch.
+"git checkout branchname "// change the branch.
+"git switch -c branchname"//make new branch.
+"git switch branchname" // change the branch.
+"git log"// see the history of the github.
+"git reflog"// see the history in more details
+"git stash"// get the memory for small time so you can switch the branch without committed.
+"git diff"// see the differnce like camparison
+"git reset <commit-hash>(which you can see with the doing git log)"// undo some.
+"git rebase branchname"// to change the base like now the line is start from there.
+the other one you can see more on internet like docs or ai tools.
+
+and you can see the other one on docs chai and code docs and for more deep go on git or github docs.
+//git is a softwear
+//github is a online service for using git and holding code in clude.
+
